@@ -20,7 +20,7 @@ export class PaisInputComponent implements OnInit{
     this.dobouncer
       .pipe(debounceTime(300))
       .subscribe( valor => {
-        console.log('debouncer:', valor);
+        this.onDebouncer.emit( valor );
       });
   }
 
@@ -28,8 +28,7 @@ export class PaisInputComponent implements OnInit{
     this.onEnter.emit( this.termino );
   }
 
-  teclaPresionada( event: any ) {
-    
+  teclaPresionada() {
     this.dobouncer.next( this.termino  );
     
     

@@ -8,7 +8,7 @@ import { PaisService } from '../../services/pais.service';
 })
 export class PorCapitalComponent {
 
-  termino: string = 'Hola Capital';
+  termino: string = '';
   hayError: boolean = false;
   paises: Country[] = [];
 
@@ -20,7 +20,6 @@ export class PorCapitalComponent {
 
     this.PaisService.buscarCapital( this.termino )
       .subscribe( (paises) => {
-        console.log(paises);
         this.paises = paises;
 
 
